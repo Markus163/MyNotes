@@ -28,13 +28,17 @@ class MainTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NoteTableViewCell
 
-        cell.textLabel?.text = notes[indexPath.row]
-        cell.detailTextLabel?.text = "31.12.2023"
+        cell.titleLabel?.text = notes[indexPath.row]
+        cell.subtitleLabel?.text = "31.12.2023"
         return cell
     }
 
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
 
     /*
     // MARK: - Navigation

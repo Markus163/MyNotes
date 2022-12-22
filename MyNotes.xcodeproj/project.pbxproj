@@ -13,6 +13,7 @@
 		97D14AEC2954770B0068567A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97D14AEB2954770B0068567A /* Assets.xcassets */; };
 		97D14AEF2954770B0068567A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97D14AED2954770B0068567A /* LaunchScreen.storyboard */; };
 		97D14AF7295486A50068567A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D14AF6295486A50068567A /* MainTableViewController.swift */; };
+		97D14AF9295495560068567A /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D14AF8295495560068567A /* NoteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		97D14AEE2954770B0068567A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97D14AF02954770B0068567A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97D14AF6295486A50068567A /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		97D14AF8295495560068567A /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				97D14AE22954770B0068567A /* AppDelegate.swift */,
 				97D14AE42954770B0068567A /* SceneDelegate.swift */,
 				97D14AF6295486A50068567A /* MainTableViewController.swift */,
+				97D14AF8295495560068567A /* NoteTableViewCell.swift */,
 				97D14AE82954770B0068567A /* Main.storyboard */,
 				97D14AEB2954770B0068567A /* Assets.xcassets */,
 				97D14AED2954770B0068567A /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				97D14AF7295486A50068567A /* MainTableViewController.swift in Sources */,
 				97D14AE32954770B0068567A /* AppDelegate.swift in Sources */,
 				97D14AE52954770B0068567A /* SceneDelegate.swift in Sources */,
+				97D14AF9295495560068567A /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

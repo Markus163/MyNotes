@@ -13,27 +13,27 @@
         <scene sceneID="0iQ-Q6-fLV">
             <objects>
                 <tableViewController id="IG1-MA-tYQ" customClass="MainTableViewController" customModule="MyNotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="U6Z-sD-F5Z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="U6Z-sD-F5Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="6F7-im-QE3" detailTextLabel="kY7-fP-WOI" style="IBUITableViewCellStyleSubtitle" id="FBi-ek-leu">
-                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="6F7-im-QE3" detailTextLabel="kY7-fP-WOI" style="IBUITableViewCellStyleSubtitle" id="FBi-ek-leu" customClass="NoteTableViewCell" customModule="MyNotes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="414" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBi-ek-leu" id="ehS-Xm-m3a">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6F7-im-QE3">
-                                            <rect key="frame" x="20" y="-1" width="55" height="29"/>
+                                            <rect key="frame" x="20" y="5" width="55" height="29"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kY7-fP-WOI">
-                                            <rect key="frame" x="20" y="28" width="56.5" height="17.5"/>
+                                            <rect key="frame" x="20" y="34" width="56.5" height="17.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                             <nil key="textColor"/>
@@ -41,6 +41,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="subtitleLabel" destination="kY7-fP-WOI" id="1c3-Ky-viH"/>
+                                    <outlet property="titleLabel" destination="6F7-im-QE3" id="4vV-wx-PCY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -61,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="705" y="-68"/>
         </scene>
-        <!--View Controller-->
+        <!--Editing-->
         <scene sceneID="2hT-aD-rfO">
             <objects>
                 <viewController id="g3u-3A-qqC" sceneMemberID="viewController">
@@ -70,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-Xx-zwH">
-                                <rect key="frame" x="20" y="156" width="374" height="696"/>
+                                <rect key="frame" x="20" y="102" width="374" height="750"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -88,7 +92,7 @@
                             <constraint firstItem="z2S-Xx-zwH" firstAttribute="leading" secondItem="j4n-Pr-ewp" secondAttribute="leading" constant="20" id="rod-4H-Gtg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AYY-Gs-6Ew">
+                    <navigationItem key="navigationItem" title="Editing" largeTitleDisplayMode="never" id="AYY-Gs-6Ew">
                         <barButtonItem key="rightBarButtonItem" id="xZA-NH-RVh">
                             <imageReference key="image" image="trash" catalog="system" renderingMode="original" variableValue="0.0"/>
                         </barButtonItem>
@@ -105,6 +109,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Dhn-kX-EKU">
                         <rect key="frame" x="0.0" y="48" width="414" height="98"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="40"/>
                         </textAttributes>
