@@ -19,14 +19,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="6F7-im-QE3" style="IBUITableViewCellStyleDefault" id="FBi-ek-leu" customClass="NoteTableViewCell" customModule="MyNotes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="J9n-wY-Lha" style="IBUITableViewCellStyleDefault" id="Fwi-RX-TSe" customClass="NoteTableViewCell" customModule="MyNotes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="414" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBi-ek-leu" id="ehS-Xm-m3a">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fwi-RX-TSe" id="9TK-94-oOW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6F7-im-QE3">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J9n-wY-Lha">
                                             <rect key="frame" x="20" y="0.0" width="374" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
@@ -36,11 +36,12 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="titleLabel" destination="6F7-im-QE3" id="4vV-wx-PCY"/>
-                                    <segue destination="g3u-3A-qqC" kind="show" identifier="showDetail" id="f3k-E9-cGD"/>
+                                    <outlet property="titleLabel" destination="J9n-wY-Lha" id="82S-JL-PQ7"/>
+                                    <segue destination="g3u-3A-qqC" kind="show" identifier="showDetail" id="SbR-6s-qrE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="IG1-MA-tYQ" id="Zu4-fY-RT7"/>
                             <outlet property="delegate" destination="IG1-MA-tYQ" id="6IS-UD-FOV"/>
@@ -131,7 +132,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f3k-E9-cGD"/>
+        <segue reference="SbR-6s-qrE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>

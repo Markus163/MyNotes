@@ -9,7 +9,6 @@ import UIKit
 
 class NoteViewController: UIViewController {
     
-    //var newNote = Note()
     var currentNote: Note?
 
     @IBOutlet weak var noteText: UITextField!
@@ -35,11 +34,8 @@ class NoteViewController: UIViewController {
     }
     
     func saveNote() {
-        
-        //let newNote = Note()
-        //newNote.titleText = noteText.text!
+
         let newNote = Note(titleText: noteText.text!)
-        
         if currentNote != nil {
             try! realm.write {
                 currentNote?.titleText = newNote.titleText

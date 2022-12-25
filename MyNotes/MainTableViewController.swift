@@ -10,15 +10,15 @@ import RealmSwift
 
 class MainTableViewController: UITableViewController {
     
-    var notes: Results<Note>!
-    //var notes = [Note(titleText: "Hello! It's your first note.")]
-
+    let realm = try! Realm()
+    lazy var notes: Results<Note> = { self.realm.objects(Note.self) }()
+    //var notes: Results<Note>!
+    var currentNote: Note?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notes = realm.objects(Note.self)
-
-       
+        firstNote()
+        //notes = realm.objects(Note.self)
     }
 
     // MARK: - Table view data source
@@ -34,13 +34,24 @@ class MainTableViewController: UITableViewController {
 
         let note = notes[indexPath.row]
         cell.titleLabel?.text = note.titleText
-        //cell.subtitleLabel?.text = notes[indexPath.row].subtitleText
         return cell
+    }
+    
+    func firstNote() {
+     
+        if notes.count == 0 {
+         try! realm.write() {
+            let newNote = Note()
+              newNote.titleText = "It's your first note!"
+            self.realm.add(newNote)
+        }
+          notes = realm.objects(Note.self)
+      }
     }
 
 
     // MARK: - Table view delegate
-    //override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let note = notes[indexPath.row]
@@ -51,17 +62,6 @@ class MainTableViewController: UITableViewController {
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
             return swipeActions
         }
-    
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//
-//       let note = notes[indexPath.row]
-//       let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
-//           StorageManager.deleteObject(note)
-//           tableView.deleteRows(at: [indexPath], with: .automatic)
-//       }
-//       return [deleteAction]
-//   }
-    
     
     
      //MARK: - Navigation
