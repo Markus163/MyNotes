@@ -17,15 +17,11 @@ class NoteViewController: UIViewController {
     }
     
     @IBAction func noteTextPressed(_ sender: Any) {
-//        view.endEditing(true)
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        DispatchQueue.main.async {
-//            self.newNote.saveNotes()
-//        }
         noteText.delegate = self
         saveButton.isEnabled = false
         noteText.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)

@@ -80,7 +80,6 @@ class MainTableViewController: UITableViewController {
         
         guard let newNoteVC = segue.source as? NoteViewController else { return }
         newNoteVC.saveNote()
-        //notes.append(newNoteVC.newNote!)
         tableView.reloadData()
     }
 }
