@@ -15,10 +15,9 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBAction func savePressed(_ sender: Any) {
     }
-    
     @IBAction func noteTextPressed(_ sender: Any) {
-
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +25,9 @@ class NoteViewController: UIViewController {
         saveButton.isEnabled = false
         noteText.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
-
     }
     
     func saveNote() {
-
         let newNote = Note(titleText: noteText.text!)
         if currentNote != nil {
             try! realm.write {
@@ -54,27 +51,15 @@ class NoteViewController: UIViewController {
         }
             saveButton.isEnabled = true
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension NoteViewController: UITextFieldDelegate {
     @objc private func textFieldChanged() {
-        
         if noteText.text?.isEmpty == false {
             saveButton.isEnabled = true
         } else {
             saveButton.isEnabled = false
         }
-        
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {

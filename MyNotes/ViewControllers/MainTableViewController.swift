@@ -12,23 +12,18 @@ class MainTableViewController: UITableViewController {
     
     let realm = try! Realm()
     lazy var notes: Results<Note> = { self.realm.objects(Note.self) }()
-    //var notes: Results<Note>!
     var currentNote: Note?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         firstNote()
-        //notes = realm.objects(Note.self)
     }
 
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.isEmpty ? 0 : notes.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NoteTableViewCell
 
@@ -38,7 +33,6 @@ class MainTableViewController: UITableViewController {
     }
     
     func firstNote() {
-     
         if notes.count == 0 {
          try! realm.write() {
             let newNote = Note()
@@ -49,9 +43,7 @@ class MainTableViewController: UITableViewController {
       }
     }
 
-
     // MARK: - Table view delegate
-
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let note = notes[indexPath.row]
@@ -62,7 +54,6 @@ class MainTableViewController: UITableViewController {
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
             return swipeActions
         }
-    
     
      //MARK: - Navigation
 
@@ -75,7 +66,6 @@ class MainTableViewController: UITableViewController {
         }
     }
     
-
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
         guard let newNoteVC = segue.source as? NoteViewController else { return }

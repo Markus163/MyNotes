@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +15,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="U6Z-sD-F5Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.92486713440000001" blue="0.71340880100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="J9n-wY-Lha" style="IBUITableViewCellStyleDefault" id="Fwi-RX-TSe" customClass="NoteTableViewCell" customModule="MyNotes" customModuleProvider="target">
@@ -30,11 +29,12 @@
                                             <rect key="frame" x="20" y="0.0" width="374" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.3854647308889062" green="0.29409410123395452" blue="0.12222898014991594" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.92486713440000001" blue="0.71340880100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="titleLabel" destination="J9n-wY-Lha" id="82S-JL-PQ7"/>
                                     <segue destination="g3u-3A-qqC" kind="show" identifier="showDetail" id="SbR-6s-qrE"/>
@@ -50,6 +50,7 @@
                     <navigationItem key="navigationItem" title="My Notes" id="sID-Ms-ykj">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="WPe-kU-fvR">
                             <imageReference key="image" image="square.and.pencil" catalog="system" renderingMode="original" variableValue="0.0"/>
+                            <color key="tintColor" red="0.3854647309" green="0.29409410120000001" blue="0.1222289801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="g3u-3A-qqC" kind="show" id="BbW-G8-ngl"/>
                             </connections>
@@ -70,15 +71,17 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="justified" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYq-WX-mN0">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <color key="backgroundColor" red="1" green="0.92486713440000001" blue="0.71340880100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.3854647309" green="0.29409410120000001" blue="0.1222289801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
                                     <action selector="noteTextPressed:" destination="g3u-3A-qqC" eventType="editingDidEnd" id="YXp-cn-P8W"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j4n-Pr-ewp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.92486713440000001" blue="0.71340880100000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TYq-WX-mN0" firstAttribute="leading" secondItem="j4n-Pr-ewp" secondAttribute="leading" id="5Rm-jC-S2h"/>
                             <constraint firstItem="TYq-WX-mN0" firstAttribute="top" secondItem="j4n-Pr-ewp" secondAttribute="top" id="aAf-70-Siq"/>
@@ -88,7 +91,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Editing" largeTitleDisplayMode="never" id="AYY-Gs-6Ew">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="xZA-NH-RVh">
-                            <color key="tintColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.3854647309" green="0.29409410120000001" blue="0.1222289801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="savePressed:" destination="g3u-3A-qqC" id="5uE-8j-3cy"/>
                                 <segue destination="9ax-aU-qDk" kind="unwind" unwindAction="unwindSegue:" id="Vky-yj-4PZ"/>
@@ -112,14 +115,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Dhn-kX-EKU">
                         <rect key="frame" x="0.0" y="48" width="414" height="98"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.3854647309" green="0.29409410120000001" blue="0.1222289801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.3854647309" green="0.29409410120000001" blue="0.1222289801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="40"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.3854647309" green="0.29409410120000001" blue="0.1222289801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -136,8 +139,5 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

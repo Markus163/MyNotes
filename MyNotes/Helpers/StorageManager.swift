@@ -16,6 +16,7 @@ class StorageManager {
             realm.add(note)
         }
     }
+    
     static func deleteObject(_ note: Note) {
         try! realm.write {
             realm.delete(note)
