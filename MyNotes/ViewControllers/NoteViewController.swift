@@ -10,23 +10,20 @@ import UIKit
 class NoteViewController: UIViewController {
     
     var currentNote: Note?
-
+    
     @IBOutlet weak var noteText: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBAction func savePressed(_ sender: Any) {
-    }
-    @IBAction func noteTextPressed(_ sender: Any) {
-    }
+    @IBAction func savePressed(_ sender: Any) {}
+    @IBAction func noteTextPressed(_ sender: Any) {}
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        noteText.delegate = self
-        saveButton.isEnabled = false
-        noteText.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupNoteVC()
         setupEditScreen()
     }
     
+    //MARK: - Methods
     func saveNote() {
         let newNote = Note(titleText: noteText.text!)
         if currentNote != nil {
@@ -36,6 +33,12 @@ class NoteViewController: UIViewController {
         } else {
             StorageManager.saveObject(newNote)
         }
+    }
+    
+    private func setupNoteVC() {
+        noteText.delegate = self
+        saveButton.isEnabled = false
+        noteText.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     private func setupEditScreen() {
@@ -49,7 +52,7 @@ class NoteViewController: UIViewController {
         if let topItem = navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
-            saveButton.isEnabled = true
+        saveButton.isEnabled = true
     }
 }
 
@@ -62,7 +65,7 @@ extension NoteViewController: UITextFieldDelegate {
         }
     }
     
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
     }

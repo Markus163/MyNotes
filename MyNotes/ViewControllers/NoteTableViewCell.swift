@@ -8,7 +8,6 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
-
 }
